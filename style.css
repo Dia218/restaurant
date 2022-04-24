@@ -1,0 +1,32 @@
+
+.select-cover-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-cover {
+    background-color: #212529;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    flex-direction: column;
+    width: 40vh;
+}
+
+.create-reservation-comment {
+    color: #FFF;
+    min-height: 10vh;
+    text-align: center;
+}
+
+.create-reservation-content {
+    margin: 10px;
+}
+.datetime {
+    width: 230px;
+
+}
+
