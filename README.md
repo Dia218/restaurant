@@ -10,3 +10,5 @@ discord에 올려주신 템플릿 적용해서 만들었습니다.
 2. dist/css/style.css에 github의 style.css 내용을 추가
 
 하시면 정상 동작됩니다.
+
+<img src="CreateReservationPage.PNG">
