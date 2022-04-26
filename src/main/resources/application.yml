@@ -1,0 +1,23 @@
+
+#maria db??
+###
+# spring.datasource.url=jdbc:mariadb://localhost:3360/Restaurant
+#spring.datasource.username=root
+#spring.datasource.password=12321
+#spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+#spring.jpa.hibernate.ddl-auto=update
+###
+
+spring:
+  # ?? DB ??
+  datasource:
+    url: "jdbc:mariadb://localhost:3360/Restaurant"
+    username: "root"
+    password: "12321"
+    driver-class-name: "org.mariadb.jdbc.Driver"
+
+mybatis:
+  # mapper ?? ??
+  mapper-locations: query/sql.xml
+  configuration:
+    map-underscore-to-camel-case: true
