@@ -5,5 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface UserMapper {
-    void saveUser(UserVo userVo);
+    void saveUser(UserVo userVo); // 회원가입
+    UserVo getUserAccount(String userId);
+
 }
