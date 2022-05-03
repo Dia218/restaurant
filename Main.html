@@ -7,40 +7,108 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Restaurant</title>
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/style.css" rel="stylesheet" />
+    <link href="template/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            background-image: url('assets/img/restaurant.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+    .containter {
+	    height: 100vh;
+    	width: 100vw;
+    }
+
+    .img_item {
+	    width: 100%;
+    	height: 100%;
+    	margin: 0 auto;
+
+    	background-image: url('assets/img/res.png');
+    	background-repeat: no-repeat;
+    	background-position: center center;
+    	background-size: 100% 100%;
+    }
+    body {
+        overflow: hidden;
+    }
+    @font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+
+
     </style>
 </head>
+
 <body class="sb-nav-fixed">
-<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" href="Main.html">Restaurant Name</a>
-    <!--상단 우측바-->
-    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-        <span class="me-0 me-md-3 my-2 my-md-0" style="color: #FFFFFF;" href="#">상단메뉴1</span>
-        <span class="me-0 me-md-3 my-2 my-md-0" style="color: #FFFFFF;" href="#">상단메뉴2</span>
-        <span class="me-0 me-md-3 my-2 my-md-0" style="color: #FFFFFF;" href="#">상단메뉴3</span>
-        <span class="me-0 me-md-3 my-2 my-md-0" style="color: #FFFFFF;" href="#">상단메뉴4</span>
-    </form>
-    <!--드랍다운 박스 로그인, 로그아웃-->
-    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="Login.html">Login</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li><a class="dropdown-item" href="Main.html">Logout</a></li>
-            </ul>
-        </li>
+<div class="containter">
+    <div class="img_item">
+    </div>
+</div>
+<div style="position: absolute; left: 50%; top: 15%; color: #fff; transform: translate(-50%, -50%);
+ font-size: 70px; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">
+    <a href="Main.html" style="text-decoration-line: none; color: inherit;">Restaurant Name</a>
+</div>
+<!--<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">-->
+<!--    &lt;!&ndash; Navbar Brand&ndash;&gt;-->
+<!--    <a class="navbar-brand ps-3" href="Main.html" style="font-size: 25px;">Restaurant Name</a>-->
+<!--    &lt;!&ndash;상단 우측바&ndash;&gt;-->
+<!--&lt;!&ndash;    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="me-0 me-md-3 my-2 my-md-0" style="color: #fff;"><a href="#" style="text-decoration-line: none; color: inherit;">상단메뉴1</a></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="me-0 me-md-3 my-2 my-md-0" style="color: #fff;"><a href="#" style="text-decoration-line: none; color: inherit;">상단메뉴2</a></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="me-0 me-md-3 my-2 my-md-0" style="color: #fff;"><a href="#" style="text-decoration-line: none; color: inherit;">상단메뉴3</a></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <span class="me-0 me-md-3 my-2 my-md-0" style="color: #fff;"><a href="#" style="text-decoration-line: none; color: inherit;">상단메뉴4</a></span>&ndash;&gt;-->
+<!--&lt;!&ndash;    </form>&ndash;&gt;-->
+<!--    &lt;!&ndash;드랍다운 박스 로그인, 로그아웃&ndash;&gt;-->
+<!--    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">-->
+<!--        <li class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>-->
+<!--            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">-->
+<!--                <li><a class="dropdown-item" href="template/Login.html">Login</a></li>-->
+<!--                <li><hr class="dropdown-divider" /></li>-->
+<!--                <li><a class="dropdown-item" href="Main.html">Logout</a></li>-->
+<!--            </ul>-->
+<!--        </li>-->
+<!--    </ul>-->
+<!--</nav>-->
+<div>
+    <div id="daumRoughmapContainer1651487669301" class="root_daum_roughmap root_daum_roughmap_landing"
+         style="position: absolute; left: 50%; top: 50%; color: #fff; transform: translate(10%, -50%);"></div>
+
+    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+    <script charset="UTF-8" >
+	new daum.roughmap.Lander({
+		"timestamp" : "1651487669301",
+		"key" : "2a3pt",
+		"mapWidth" : "400",
+		"mapHeight" : "300"
+	}).render();
+    </script>
+
+    <ul style="list-style:none; position: absolute; left: 50%; top: 50%; color: #fff; transform: translate(-135%, -50%);">
+        <li style="color: #fff; font-size: 210%; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">운영요일 및 휴무일</li>
+        <li style="color: #fff; font-size: 200%  font-family: 'GmarketSansMedium', sans-serif;">월 ~ 일</li>
+        <li style="color: #fff; font-size: 210%; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">운영시간</li>
+        <li style="color: #fff; font-size: 200%  font-family: 'GmarketSansMedium', sans-serif;">오전 11시 ~ 오후 10시</li>
+        <li style="color: #fff; font-size: 210%; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">예약 가능 시간</li>
+        <li style="color: #fff; font-size: 200% font-family: 'GmarketSansMedium', sans-serif;">오전 11시 ~ 오후 8시</li>
+        <li style="color: #fff; font-size: 210%; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">전화번호</li>
+        <li style="color: #fff; font-size: 200% font-family: 'GmarketSansMedium', sans-serif;">000-0000-000</li>
+        <li style="color: #fff; font-size: 210%; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">위치</li>
+        <li style="color: #fff; font-size: 200% font-family: 'GmarketSansMedium', sans-serif;">경기 수원시 영통구 광교산로 154-42</li>
     </ul>
-</nav>
+</div>
+<div>
+    <button style="position: absolute; left: 40%; top: 85%; transform: translate(-50%, -50%); width:100px; height:40px;
+    padding: 0;border: none; background: none; color:#fff; font-size: 30px; font-family: 'GmarketSansMedium', sans-serif;">
+        <a href="template/Login.html" style="text-decoration-line: none; color: inherit;">LogIn</a></button>
+    <button style="position: absolute; left: 60%; top: 85%; transform: translate(-50%, -50%); width:100px;height:40px;
+    padding: 0;border: none; background: none; color:#fff; font-size: 30px; font-family: 'GmarketSansMedium', sans-serif;">
+        <a href="#" style="text-decoration-line: none; color: inherit;">Review</a></button>
+</div>
+
 <div id="layoutSidenav">
     <div id="layoutSidenav_content">
         <main>
@@ -48,12 +116,13 @@
         </main>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/scripts.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 <script src="assets/demo/chart-area-demo.js"></script>
 <script src="assets/demo/chart-bar-demo.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-<script src="js/datatables-simple-demo.js"></script>
+<script src="template/js/datatables-simple-demo.js"></script>
 </body>
 </html>
