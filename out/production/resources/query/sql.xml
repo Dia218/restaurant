@@ -10,7 +10,7 @@
     </select>
     <!-- join -->
     <insert id="saveUser" parameterType="com.Ateam.demo.vo.UserVo">
-        INSERT INTO user_inform.tb_user
+        INSERT INTO TB_USER
             (USER_ID, USER_PW, USER_NAME, USER_AUTH,USER_DOB,USER_EMAIL,USER_PHONE,APPEND_DATE, UPDATE_DATE)
         VALUES(#{userId},#{userPw},#{userName},#{userAuth},#{userDoB},#{userEmail},#{userPhone},#{appendDate},#{updateDate});
     </insert>
