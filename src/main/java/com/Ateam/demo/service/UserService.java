@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserService implements UserDetailsService {
     SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:sss");
     Date time = new Date();
-    String localTime;
+    String localTime = format.format(time);
     private final UserMapper userMapper;
 
     @Transactional

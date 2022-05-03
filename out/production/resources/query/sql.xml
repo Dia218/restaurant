@@ -5,7 +5,7 @@
 <mapper namespace="com.Ateam.demo.mapper.UserMapper">
     <!-- login -->
     <select id="getUserAccount" resultType="com.Ateam.demo.vo.UserVo">
-        SELECT * FROM user_inform.tb_user
+        SELECT * FROM TB_USER
         WHERE USER_ID= #{userId}
     </select>
     <!-- join -->

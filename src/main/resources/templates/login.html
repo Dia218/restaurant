@@ -23,12 +23,12 @@
                             <div class="card-body">
                                 <form th:action="@{/login_proc}" method="post">
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputID"/>
-                                        <label th:for="inputID">ID</label>
+                                        <input class="form-control" id="inputID" name="username"/>
+                                        <label th:for="username">ID</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input class="form-control" id="inputPassword" type="password"/>
-                                        <label th:for="inputPassword">Password</label>
+                                        <input class="form-control" id="inputPassword" type="password" name="password"/>
+                                        <label th:for="password">Password</label>
                                     </div>
                                     <div class="card-footer text-center py-3">
                                         <button type="submit" class="btn btn-primary">로그인</button>
