@@ -16,7 +16,7 @@ spring:
     driver-class-name: "org.mariadb.jdbc.Driver"
 
   thymeleaf:
-    prefix: classpath:templates/
+    #prefix: classpath:templates/*
     suffix: .html
     check-template-location: true
     cache: false
@@ -24,7 +24,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
 
   mvc:
     static-path-pattern: "/resources/static/**"

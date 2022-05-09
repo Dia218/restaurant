@@ -29,7 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers( "/login", "/singUp", "/login_failed", "/resources/**").permitAll() // 로그인 권한은 누구나, resources파일도 모든권한
+                .antMatchers( "/login", "/singUp", "/enroll", "/login_failed", "/resources/**").permitAll() // 로그인 권한은 누구나, resources파일도 모든권한
                 // USER, ADMIN 접근 허용 설정
                 .antMatchers("/manager_access").hasRole("ADMIN")
                 .and()

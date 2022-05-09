@@ -14,5 +14,6 @@
             (USER_ID, USER_PW, USER_NAME, USER_AUTH,USER_DOB,USER_EMAIL,USER_PHONE,APPEND_DATE, UPDATE_DATE)
         VALUES(#{userId},#{userPw},#{userName},#{userAuth},#{userDoB},#{userEmail},#{userPhone},#{appendDate},#{updateDate});
     </insert>
+
 </mapper>
 
