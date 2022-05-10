@@ -12,12 +12,13 @@
 
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/style.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css"/>
-    <link rel="stylesheet" href="/start-bootstrap-sb-admin-gh-pages/css" type="text/css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css"/>
+    <link rel="stylesheet" href="/startbootstrap-sb-admin-gh-pages/css" type="text/css"/>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet"/>
     <link href="/resources/static/css/styles.css" rel="stylesheet"/>
     <link href="/resources/static/css/createReservation.css" rel="stylesheet"/>
     <link href="./dist/css/datepicker.min.css" rel="stylesheet" type="text/css" media="all">
+
 
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
@@ -25,7 +26,7 @@
 <body class="sb-nav-fixed">
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
     <!-- Navbar Brand-->
-    <a class="navbar-brand ps-3" onClick="location.href='index'">A's Kitchen</a>
+    <a class="navbar-brand ps-3" onClick="location.href='guest'">A's Kitchen</a>
     <!-- Sidebar Toggle-->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
             class="fas fa-bars"></i></button>
@@ -43,7 +44,7 @@
             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown"
                aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#!">Logout</a></li>
+                <li><a class="dropdown-item" onClick="location.href='index'">Logout</a></li>
             </ul>
         </li>
     </ul>
@@ -61,6 +62,10 @@
                     <a class="nav-link" href="#">
                         <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                         예약수정
+                    </a>
+                    <a class="nav-link" onClick="location.href='reservationListGuest'">
+                        <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        예약조회
                     </a>
                     <div class="sb-sidenav-menu-heading">후기</div>
                     <a class="nav-link" href="#">
@@ -142,20 +147,25 @@
                         </div>
                     </div>
                 </div>
-                <form>
+                <form method="post" action="/createReservationGuest">
                     <div class="select-cover">
                         <div class="create-reservation-comment">
                             원하시는 자릿 수와 <br>예약 날짜를 정해주세요.
                         </div>
 <!--                        테이블 번호-->
                         <div class="create-reservation-content">
-                            Table Number:<input class="form-control value-check" placeholder="테이블 번호" value="" id="selected-table-number" type="number">
+                            Table Number:
+                            <input class="form-control value-check" value="" id="selected-table-number" name="tableNo" type="number"/>
+                            <label th:for="selected-table-number">테이블 번호</label>
+                            <!--<input class="form-control value-check" placeholder="테이블 번호" value="" id="selected-table-number" type="number">-->
                         </div>
 <!--                        자릿 수-->
                         <div class="create-reservation-content">
                             The Number of Sits:
-                            <select class="form-select value-check" aria-label="Default select example" id="selected-sits">
+                            <select class="form-select value-check" aria-label="Default select example" id="selected-sits" name="tableSits" type="number">
+                                <label th:for="selected-sits">
                                 <option value="" selected hidden>자릿 수를 선택해주세요.</option>
+                                </label>
                                 <option value="2">2인석</option>
                                 <option value="4">4인석</option>
                                 <option value="6">6인석</option>
@@ -164,11 +174,14 @@
                         </div>
 <!--                        날짜-->
                         <div class="create-reservation-content">
-                            Date & Time:<input class="form-control value-check" value="" type="text" id="startDate" placeholder="날짜를 선택해주세요" readonly>
+                            Date & Time:
+                            <input class="form-control value-check" value="" id="startDate" name="reservationDate" type="text" placeholder="날짜를 선택해주세요" readonly>
+                            <label th:for="startDate"></label>
                         </div>
 <!--                        시간-->
                         <div class="create-reservation-content">
-                            <input class="form-control value-check" value="" type="time" id="startTime" min="11:00" max="20:00">
+                            <input class="form-control value-check" id="startTime" name="reservationTime" type="time" value="" min="11:00" max="20:00">
+                            <label th:for="startTime"></label>
                         </div>
 
                         <button type="submit" class="btn btn-outline-light" onclick="return CheckReservationUserForm()">예약</button>
@@ -189,7 +202,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-
+<script src="/resources/static/js/createReservation.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $.datepicker.setDefaults($.datepicker.regional['ko']);
