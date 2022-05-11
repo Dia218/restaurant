@@ -6,8 +6,8 @@
     <!-- enroll reservation -->
     <insert id="enrollReservation" parameterType="com.Ateam.demo.vo.ReservationVO">
         INSERT INTO reservation
-        (TABLE_NO, TABLE_SITS)
-        VALUES(#{tableNo},#{tableSits});
+        (USER_ID, TABLE_NO, TABLE_SITS)
+        VALUES(#{userId},#{tableNo},#{tableSits});
     </insert>
 
 </mapper>

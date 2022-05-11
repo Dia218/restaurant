@@ -7,11 +7,18 @@ import java.util.Date;
 
 @Data
 public class ReservationVO {
+    private String userId;
     private int tableNo;
     private int tableSits;
     private Date reservationDate;
     private Time reservationTime;
 
+    public String getUserId() {
+        return userId;
+    }
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
     public int getTableNo() {
         return tableNo;
     }
