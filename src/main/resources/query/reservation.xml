@@ -6,9 +6,20 @@
     <!-- enroll reservation -->
     <insert id="enrollReservation" parameterType="com.Ateam.demo.vo.ReservationVO">
         INSERT INTO reservation
-        (USER_ID, TABLE_NO, TABLE_SITS)
-        VALUES(#{userId},#{tableNo},#{tableSits});
+        (USER_ID,TABLE_NO, TABLE_SITS,RESERVATION_DATE, RESERVATION_TIME)
+        VALUES(#{userId},#{tableNo},#{tableSits},#{reservationDate},#{reservationTime});
     </insert>
+    <!-- check reservation -->
+    <select id="findAll" resultType="com.Ateam.demo.vo.ReservationVO">
+        SELECT *
+        FROM reservation
+    </select>
+    <!-- update reservation -->
+    <select id="updateReservation" resultType="com.Ateam.demo.vo.ReservationVO">
+        UPDATE reservation
+        FROM reservation
+    </select>
+
 
 </mapper>
 
