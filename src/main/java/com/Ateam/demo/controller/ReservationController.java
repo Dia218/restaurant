@@ -18,13 +18,22 @@ public class ReservationController {
     private ReservationService Rservice;
 
     @GetMapping("/reservationPage")
-    public String GetReservationPage(){
-        return "postReservation";
+    public String GetReservationPage(Authentication authentication){
+        UserVo user = (UserVo)authentication.getPrincipal();
+        if(user.getUserAuth().equals("ROLE_ADMIN"))   // 매니저 권한일 경우 매니저 예약 페이지 반환
+            return "createReservation"; // 매니저 페이지 반환
+        else
+            return "postReservation";   // 사용자 페이지 반환
     }
 
-    @PostMapping ({"/postReservation"})
-    public void enroll(ReservationVO reservation, Authentication authentication) {
+    @PostMapping ({"/postReservation"}) // 사용자 권한일 경우 사용자 예약 페이지에서 로그인 유저 정보를 전달
+    public void enroll_user(ReservationVO reservation, Authentication authentication) {
         UserVo user = (UserVo)authentication.getPrincipal();
         Rservice.enrollR(reservation,user);
+    }
+
+    @PostMapping ({"/postReservation_m"}) // 매니저 권한일 경우 매니저 예약 페이지에서 받아온 유저 id값을 전달
+    public void enroll_manager(ReservationVO reservation) {
+        Rservice.enrollR_M(reservation);
     }
 }

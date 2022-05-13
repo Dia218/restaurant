@@ -16,4 +16,8 @@ public class ReservationServiceImpl implements ReservationService {
         reservation.setUserId(user.getUserId());
         Rmapper.enrollReservation(reservation);
     }
+
+    public void enrollR_M(ReservationVO reservation) {
+        Rmapper.enrollReservation(reservation);
+    }
 }
