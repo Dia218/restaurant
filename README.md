@@ -19,3 +19,10 @@ tb_user 테이블의 USER_ID 컬럼의 속성을 Unique로 수정하고 위 rese
 #프론트와 동기화를 위해 설정할 것
 -프론트의 html파일 내의 input 필드 name 속성을 ReservationVO 변수명과 동일하게 해야함 (날짜, 시간)
 -reservation.xml 의 insert 쿼리값 추가
+
+
+#############################################################################################################################
+
+매니저용 예약 등록 기능 추가했습니다  
+프론트 html과 연결작업시 ReservationController에서 권한에 따라 반환받는 html 페이지를 설정해주면 됩니다  
+연결한 매니저용 예약 페이지에서 유저 아이디를 입력받으면 해당 input의 name 속성을 ReservationVO의 userId로 설정해주시고 form action = "/postReservation_m" 으로 설정하면 됩니다  
