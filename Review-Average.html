@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Review-Average</title>
+</head>
+<body>
+<script>
+            let db = [
+                {
+                    index: 1,
+                    name: '김oo',
+                    score: '3.5/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 2,
+                    name: '민oo',
+                    phone: '4.5/5.0',
+                    date: 'asdfasdf',
+                },
+                {
+                    index: 3,
+                    name: '강oo',
+                    score: '3.0/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 4,
+                    name: '김oo',
+                    score: '3.5/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 5,
+                    name: '박oo',
+                    score: '4.0/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 6,
+                    name: '구oo',
+                    score: '4.5/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 7,
+                    name: '최oo',
+                    score: '5.0/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 8,
+                    name: '이oo',
+                    score: '4.0/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 9,
+                    name: '최oo',
+                    score: '4.5/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 10,
+                    name: '김oo',
+                    score: '4.5/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 11,
+                    name: '장oo',
+                    score: '4.5/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 12,
+                    name: '최oo',
+                    score: '3.5/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 13,
+                    name: '최oo',
+                    score: '3.0/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 14,
+                    name: '민oo',
+                    score: '2.5/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 15,
+                    name: '박oo',
+                    score: '5.0/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 16,
+                    name: '강oo',
+                    score: '5.0/5.0',
+                    content: 'asdfasdf',
+                },
+                {
+                    index: 17,
+                    name: '최oo',
+                    score: '5.0/5.0',
+                    content: 'asdfasdf',
+                }
+            ]
+
+            document.write('<table border="1">');
+            // thead
+            document.write('<thead>');
+            document.write('<tr>');
+            document.write('<th>인덱스</th>');
+            document.write('<th>이름</th>');
+            document.write('<th>점수</th>');
+            document.write('<th>내용</th>');
+
+            document.write('</tr>');
+            document.write('</thead>');
+
+            let point = 0;
+            let sum = 0;
+            let average = 0;
+            // tbody
+            document.write('<tbody>');
+            for (let i = 0; i < db.length; i++) {
+              document.write('<tr>');
+            //   db[i] 값에서 value들만 저장한 배열
+              const data = Object.values(db[i]);
+              for (let j = 0; j < Object.keys(db[i]).length; j++)  {
+                document.write('<td>');
+                document.write(data[j]);
+                if(j === 2) {
+                    point = Number(data[j].split('/')[0]);
+                    sum = sum + point;
+
+                }
+                document.write('</td>');
+              }
+              document.write('</tr>')
+            }
+            document.write('</table>');
+            average = sum / db.length;
+            document.write(average);
+
+    </script>
+</body>
+</html>
