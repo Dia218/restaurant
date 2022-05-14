@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Ateam.demo.mapper.ReservationMapper">
+    <!-- enroll reservation -->
+    <insert id="enrollReservation" parameterType="com.Ateam.demo.vo.ReservationVo">
+        INSERT INTO user_inform.reservation
+            (USER_ID,TABLE_NO,TABLE_SITS,RESERVATION_DATE,RESERVATION_TIME)
+        VALUES(#{userId},#{tableNo},#{tableSits},#{reservationDate},#{reservationTime});
+    </insert>
+
+    <!-- check reservation -->
+    <select id="findAll" resultType="com.Ateam.demo.vo.ReservationVo">
+        SELECT *
+        FROM reservation
+    </select>
+
+    <!-- update reservation -->
+    <select id="updateReservation" resultType="com.Ateam.demo.vo.ReservationVo">
+        UPDATE reservation
+        FROM reservation
+    </select>
+</mapper>

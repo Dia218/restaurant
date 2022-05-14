@@ -1,0 +1,37 @@
+
+#maria db??
+###
+# spring.datasource.url=jdbc:mariadb://localhost:3360/Restaurant
+#spring.datasource.username=root
+#spring.datasource.password=12321
+#spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+#spring.jpa.hibernate.ddl-auto=update
+###
+spring:
+  datasource:
+    url: "jdbc:mariadb://localhost:3306/user_inform"
+    username: "root"
+    password: "1004rornfl"
+    driver-class-name: "org.mariadb.jdbc.Driver"
+
+  thymeleaf:
+    prefix: classpath:templates/
+    suffix: .html
+    check-template-location: true
+    cache: false
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+  mvc:
+    static-path-pattern: "/resources/static/**"
+
+
+mybatis:
+  mapper-locations: query/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
