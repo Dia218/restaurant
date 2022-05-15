@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Ateam.demo.mapper.ReviewMapper">
+    <!-- enroll review -->
+    <insert id="enrollReview" parameterType="com.Ateam.demo.vo.ReviewVO">
+        INSERT INTO review
+            (USER_ID,REVIEW_TITLE,REVIEW_TEXT)
+        VALUES(#{userId},#{reviewTitle},#{reviewText});
+    </insert>
+    <!-- check review -->
+    <select id="findAll" resultType="com.Ateam.demo.vo.ReviewVO">
+        SELECT *
+        FROM review
+    </select>
+
+
+</mapper>
+

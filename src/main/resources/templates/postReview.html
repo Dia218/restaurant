@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>후기</title>
+    <link rel='stylesheet' href='/webjars/bootstrap/4.5.0/css/bootstrap.min.css'>
+</head>
+
+<body>
+<div>
+
+    <div>
+        <form action="/postReview" method="post">
+            <div>
+                <label th:for="inputReviewTitle" style="font-weight: bolder;">제목</label>
+                <input type="text" id="inputReviewTitle" name="reviewTitle"
+                       placeholder="제목을 입력하세요" required="required">
+            </div>
+<!--            <div>-->
+<!--                <label for="writer" style="font-weight: bolder;">작성자</label>-->
+<!--                <input type="text" th:field="*{writer}" id="writer" name="writer"-->
+<!--                       placeholder="작성자를 입력하세요" required="required">-->
+<!--            </div>-->
+            <div style="font-weight: bolder;">
+                <label for="inputReviewText">내용</label><br/>
+                <textarea id="inputReviewText" name="reviewText" rows="15" cols="50"
+                          placeholder="내용을 입력하세요" required="required"></textarea>
+            </div>
+            <div style="text-align: right;">
+                <input type="submit" th:value="목록"> <!--th:formaction="@{/fileBoard/list}">-->
+                <input type="submit" th:value="작성">
+                <input type="reset" th:value="취소">
+            </div>
+        </form>
+    </div>
+    <br/><br/><br/>
+</div>
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
