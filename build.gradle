@@ -40,6 +40,10 @@ dependencies {
     //로그
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
 
+    //jsp 파일 view 호환
+    implementation 'javax.servlet:jstl'
+    implementation "org.apache.tomcat.embed:tomcat-embed-jasper"
+
     runtimeOnly 'org.webjars:bootstrap:4.5.0'
 }
 

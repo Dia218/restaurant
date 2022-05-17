@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequiredArgsConstructor
@@ -26,7 +25,7 @@ public class UserController {
 
     @GetMapping({"/login"})
     public String login() {
-        return "login";
+        return "thymeleaf/login";
     }
 
     /**
@@ -35,7 +34,7 @@ public class UserController {
      */
     @GetMapping({"/signUp"})
     public String signUpForm() {
-        return "signup";
+        return "thymeleaf/signup";
     }
 
     /**
@@ -44,7 +43,7 @@ public class UserController {
      */
     @GetMapping({"/login_failed"})
     public String loginFailed() {
-        return "login_failed";
+        return "thymeleaf/login_failed";
     }
 
     /**
@@ -53,7 +52,7 @@ public class UserController {
      */
     @GetMapping({"/access_denied"})
     public String access_Denied() {
-        return "access_denied";
+        return "thymeleaf/access_denied";
     }
 
     /**
@@ -94,6 +93,6 @@ public class UserController {
     @GetMapping({"/createReservation"})
     public String CreateReservation(Model model, Authentication authentication) {
 
-        return "createReservation";
+        return "thymeleaf/createReservation";
     }
 }

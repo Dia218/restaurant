@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>예약하기</title>
+  <link rel='stylesheet' href='/webjars/bootstrap/4.5.0/css/bootstrap.min.css'>
+</head>
+<body>
+<div class="container">
+  <form action="thymeleaf/postReservation" method="post">
+    <div class="form-group row">
+      <label th:for="inputTableNo" class="col-sm-2 col-form-label"><strong>테이블번호</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="tableNo" class="form-control" id="inputTableNo">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label th:for="inputTableSits" class="col-sm-2 col-form-label"><strong>테이블자리수</strong></label>
+      <div class="col-sm-10">
+        <input type="text" name="tableSits" class="form-control" id="inputTableSits">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-auto mr-auto"></div>
+      <div class="col-auto">
+        <input class="btn btn-primary" type="submit" role="button" value="예약하기">
+      </div>
+    </div>
+  </form>
+</div>
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

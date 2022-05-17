@@ -10,4 +10,18 @@
         VALUES(#{userId},#{tableNo},#{tableSits});
     </insert>
 
+    <!-- 전체 예약리스트 조회 -->
+    <select id="getlist" resultType="com.Ateam.demo.vo.ReservationVO">
+        select * from reservation;
+    </select>
+
+    <!-- 예약 조회 -->
+    <select id="getPage" resultType="com.Ateam.demo.vo.ReservationVO">
+        select * from reservation where RESERVATION_NO = #{reservationNo};
+    </select>
+
+    <!-- 예약 수정 -->
+    <update id="modify">
+    update reservation set TABLE_NO=#{tableNo}, TABLE_SITS=#{tableSits} where RESERVATION_NO = #{reservationNo};
+    </update>
 </mapper>

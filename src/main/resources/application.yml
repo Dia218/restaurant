@@ -17,9 +17,10 @@ spring:
 
   thymeleaf:
     #prefix: classpath:templates/*
-    suffix: .html
+    #suffix: .html
     check-template-location: true
     cache: false
+    view-names: thymeleaf/*
 
   jpa:
     show-sql: true
@@ -28,6 +29,9 @@ spring:
 
   mvc:
     static-path-pattern: "/resources/static/**"
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
 
 
 mybatis:
