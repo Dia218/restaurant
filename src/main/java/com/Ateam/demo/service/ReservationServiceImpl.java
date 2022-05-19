@@ -37,4 +37,9 @@ public class ReservationServiceImpl implements ReservationService {
     public int modifyR(ReservationVO reservation) {
         return Rmapper.modify(reservation);
     }
+
+    @Override
+    public int deleteR(ReservationVO reservation) {
+        return Rmapper.delete(reservation);
+    }
 }

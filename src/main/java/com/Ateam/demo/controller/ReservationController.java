@@ -59,4 +59,13 @@ public class ReservationController {
 
         return "redirect:/reservationList";
     }
+
+    @PostMapping({"/deleteReservation"})    // 예약 삭제 컨트롤
+    public  String PostDelete(ReservationVO reservation,RedirectAttributes rttr) {
+        Rservice.deleteR(reservation);
+
+        rttr.addFlashAttribute("result", "delete success");
+
+        return "redirect:/reservationList";
+    }
 }

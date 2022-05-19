@@ -67,12 +67,14 @@
     </div>
     <div class="btn_wrap">
         <a class="btn" id="list_btn">목록 페이지</a>
+        <a class="btn" id="delete_btn">삭제</a>
         <a class="btn" id="modify_btn">수정 하기</a>
     </div>
 </form>
-<form id="infoForm" action="/getReservation" method="get">
-    <input type="hidden" id="bno" name="bno" value='<c:out value="${pageInfo.reservationNo}"/>'>
+<form id="infoForm" action="/reservationInfo" method="get">
+    <input type="hidden" id="bno" name="reservationNo" value='<c:out value="${pageInfo.reservationNo}"/>'>
 </form>
+
 <script>
     let form = $("#infoForm");
     let mForm = $("#modifyForm");    // 페이지 데이터 수정 from
@@ -86,6 +88,13 @@
     /* 수정 하기 버튼 */
     $("#modify_btn").on("click", function(e){
         mForm.submit();
+    });
+
+    /* 삭제 버튼 */
+    $("#delete_btn").on("click", function(e){
+        form.attr("action", "/deleteReservation");
+        form.attr("method", "post");
+        form.submit();
     });
 </script>
 </body>

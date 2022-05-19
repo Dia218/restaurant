@@ -14,4 +14,6 @@ public interface ReservationMapper {
     public ReservationVO getPage(int reservationNo);    // 조회한 예약 객체 get
 
     public int modify(ReservationVO reservation);   // 예약 수정
+    
+    public int delete(ReservationVO reservation); // 예약 삭제
 }

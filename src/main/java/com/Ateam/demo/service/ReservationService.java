@@ -14,4 +14,6 @@ public interface ReservationService {
     public ReservationVO getRPage(int reservationNo); // 예약 조회
     
     public int modifyR(ReservationVO reservation);  // 예약 수정
+    
+    public int deleteR(ReservationVO reservation); // 예약 삭제
 }

@@ -24,4 +24,9 @@
     <update id="modify">
     update reservation set TABLE_NO=#{tableNo}, TABLE_SITS=#{tableSits} where RESERVATION_NO = #{reservationNo};
     </update>
+
+    <!-- 예약 삭제 -->
+    <delete id="delete">
+    delete from reservation where RESERVATION_NO = #{reservationNo};
+    </delete>
 </mapper>
