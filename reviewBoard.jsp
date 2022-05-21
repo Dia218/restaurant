@@ -21,6 +21,18 @@
         table {
             background-color: #FFFFFF;
         }
+
+        .dataTable-table > thead > tr > th {
+            vertical-align: bottom;
+            text-align: center;
+            border-bottom: none;
+        }
+
+        .dataTable-table > tbody > tr > td {
+            vertical-align: bottom;
+            text-align: center;
+            border-bottom: none;
+        }
     </style>
 </head>
 <body>
@@ -113,38 +125,63 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4" style="color:#fff;">후기 게시판</h1>
+                <h1 class="mt-4" style="color:#fff;">후기 조회</h1>
+
                 <div class="card mb-4">
-                    <table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-                        <thead>
-                        <tr>
-                            <th style="background-color: #eeeeee; text-align: center;">번호</th>
-                            <th style="background-color: #eeeeee; text-align: center;">제목</th>
-                            <th style="background-color: #eeeeee; text-align: center;">평점</th>
-                            <th style="background-color: #eeeeee; text-align: center;">작성자</th>
-                            <th style="background-color: #eeeeee; text-align: center;">작성일</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <!-- 테스트 코드 -->
-                            <td>1</td>
-                            <td>안녕하세요</td>
-                            <td>5</td>
-                            <td>홍길동</td>
-                            <td>2020-07-13</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <div class="card-body">
+                        후기 조회 화면
+                    </div>
                 </div>
-                <!-- 글쓰기 버튼 생성 -->
-                <a href="reviewWrite.jsp" class="btn btn-primary pull-right">글쓰기</a>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        후기 조회
+                    </div>
+                    <div class="card-body">
+                        <table border="1" id="datatablesSimple">
+                            <thead>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>작성자</th>
+                                    <th>제목</th>
+                                    <th>평점</th>
+                                    <th>작성일</th>
+                                </tr>
+                            </thead>
+                            <script>
+                                let sum = 0;
+                                let count = 0;
+                            </script>
+                            <tbody>
+                                <tr>
+                                    <td><c:out value="{${review.reviewNo}}"/></td>
+                                    <td><c:out value="{${review.userId}}"/></td>
+                                    <td><c:out value="{${review.reviewTitle}}"/></td>
+                                    <td><c:out value="{${review.reviewPoint}}"/></td>
+                                    <script>
+                                        sum += ${review.reviewPoint}
+                                        count++;
+                                    </script>
+                                    <td><c:out value="{${review.reviewDate}}"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <script>
+                            let average = sum/count;
+                            document.write('평균 평점 : ');
+                            document.write(average);
+                        </script>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
 </div>
 <!-- 후기 게시판 양식 영역 끝 -->
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
 <script src="${pageContext.request.contextPath}/resources/static/js/scripts.js"></script>
+<script src="${pageContext.request.contextPath}/resources/static/assets/demo/datatables-simple-demo.js"></script>
 </body>
