@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Ateam.demo.mapper.ReservationMapper">
+    <!-- 예약 등록  -->
+    <insert id="enrollReservation" parameterType="com.Ateam.demo.vo.ReservationVo">
+        INSERT INTO user_inform.reservation
+            (USER_ID,USER_NAME,USER_PHONE,TABLE_NO,TABLE_SITS,RESERVATION_DATE,RESERVATION_TIME)
+        VALUES(#{userId},#{userName},#{userPhone},#{tableNo},#{tableSits},#{reservationDate},#{reservationTime});
+    </insert>
+
+    <!-- 전체 예약리스트 조회 -->
+    <select id="getlist" resultType="com.Ateam.demo.vo.ReservationVo">
+        select * from reservation;
+    </select>
+
+    <!-- 유저 예약리스트 조회 -->
+    <select id="getlist_u" resultType="com.Ateam.demo.vo.ReservationVo">
+        select * from reservation where USER_ID = #{userId};
+    </select>
+
+    <!-- 예약 조회 -->
+    <select id="getPage" resultType="com.Ateam.demo.vo.ReservationVo">
+        select * from reservation where RESERVATION_NO = #{reservationNo};
+    </select>
+
+    <!-- 예약 수정 -->
+    <update id="modify">
+        update reservation set TABLE_NO=#{tableNo}, TABLE_SITS=#{tableSits}, RESERVATION_DATE=#{reservationDate}, RESERVATION_TIME=#{reservationTime}  where RESERVATION_NO = #{reservationNo};
+    </update>
+
+    <!-- 예약 삭제 -->
+    <delete id="delete">
+        delete from reservation where RESERVATION_NO = #{reservationNo};
+    </delete>
+</mapper>

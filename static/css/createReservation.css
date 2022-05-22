@@ -1,0 +1,67 @@
+.select-cover-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.select-cover {
+    background-color: #212529;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    min-height: 50vh;
+    width: 40vh;
+    margin: 10px;
+}
+
+.select-table-wrapper {
+  border-radius: 10px;
+  background-color: #565e64;
+  width: 90%;
+}
+
+.select-table-container {
+    display: flex;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    margin: 12px;
+    justify-content: space-between;
+
+}
+
+.select-table-item {
+    border-radius: 5px;
+    background-color: #FFF;
+
+    width: 50px;
+    height: 50px;
+
+    text-align: center;
+    line-height:50px;
+}
+
+.select-table-item:hover {
+    background-color: #1a1e21;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.create-reservation-comment {
+    color: #FFF;
+    text-align: center;
+}
+
+.create-reservation-content {
+    color: #FFF;
+    font-size: 12px;
+    width: 230px;
+    margin: 5px;
+}
+
+.create-reservation-comment div {
+    min-height: 5vh;
+}
