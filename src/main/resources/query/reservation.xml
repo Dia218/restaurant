@@ -15,6 +15,11 @@
         select * from reservation;
     </select>
 
+    <!-- 유저 예약리스트 조회 -->
+    <select id="getlist_u" resultType="com.Ateam.demo.vo.ReservationVO">
+        select * from reservation where USER_ID = #{userId};
+    </select>
+
     <!-- 예약 조회 -->
     <select id="getPage" resultType="com.Ateam.demo.vo.ReservationVO">
         select * from reservation where RESERVATION_NO = #{reservationNo};

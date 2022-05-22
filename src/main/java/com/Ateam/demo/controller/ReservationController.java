@@ -39,10 +39,15 @@ public class ReservationController {
         Rservice.enrollR_M(reservation);
     }
 
-    @GetMapping({"/reservationList"})  // 예약 리스트 조회
+    @GetMapping({"/reservationList"})  // 예약 리스트 조회 (매니저)
     public void GetReservationList(Model model) {
+            model.addAttribute("reservationlist",Rservice.getRlist());
+    }
 
-        model.addAttribute("reservationlist",Rservice.getRlist());
+    @GetMapping({"/reservationList_u"})  // 예약 리스트 조회 (유저)
+    public void GetReservationList(Model model,Authentication authentication) {
+        UserVo user = (UserVo)authentication.getPrincipal();
+        model.addAttribute("reservationlist",Rservice.getRlist_u(user.getUserId()));
     }
 
     @GetMapping({"/reservationInfo"})    // 예약 조회

@@ -27,6 +27,10 @@ public class ReservationServiceImpl implements ReservationService {
     public List<ReservationVO> getRlist() {
         return Rmapper.getlist();
     }
+    @Override
+    public List<ReservationVO> getRlist_u(String userId) {
+        return Rmapper.getlist_u(userId);
+    }
 
     @Override
     public ReservationVO getRPage(int reservationNo) {

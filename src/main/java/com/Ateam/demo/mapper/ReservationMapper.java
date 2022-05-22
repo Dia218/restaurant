@@ -11,6 +11,8 @@ public interface ReservationMapper {
 
     public List<ReservationVO> getlist();   // 조회할 예약 리스트 get
 
+    public List<ReservationVO> getlist_u(String userId);   // 조회할 예약 리스트 (유저 필터링)
+
     public ReservationVO getPage(int reservationNo);    // 조회한 예약 객체 get
 
     public int modify(ReservationVO reservation);   // 예약 수정
