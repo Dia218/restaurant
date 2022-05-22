@@ -61,11 +61,23 @@ public class ReservationController {
     }
 
     @PostMapping({"/deleteReservation"})    // 예약 삭제 컨트롤
-    public  String PostDelete(ReservationVO reservation,RedirectAttributes rttr) {
+    public String PostDelete(ReservationVO reservation,RedirectAttributes rttr) {
         Rservice.deleteR(reservation);
 
         rttr.addFlashAttribute("result", "delete success");
 
         return "redirect:/reservationList";
+    }
+
+    @GetMapping({"/monthStatistics"})  // 월별 통계 조회
+    public void GetMonthStatistics(Model model) {
+
+        model.addAttribute("reservationlist",Rservice.getRlist());
+    }
+
+    @GetMapping({"/timeStatistics"})  // 시간별 통계 조회
+    public void GetTimeStatistics(Model model) {
+
+        model.addAttribute("reservationlist",Rservice.getRlist());
     }
 }

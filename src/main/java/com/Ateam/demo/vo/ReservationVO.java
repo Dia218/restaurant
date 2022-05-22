@@ -2,17 +2,14 @@ package com.Ateam.demo.vo;
 
 import lombok.Data;
 
-import java.sql.Time;
-import java.util.Date;
-
 @Data
 public class ReservationVO {
     private int reservationNo;
     private String userId;
     private int tableNo;
     private int tableSits;
-    private Date reservationDate;
-    private Time reservationTime;
+    private String reservationDate;
+    private String reservationTime;
 
 
     public String getUserId() {
@@ -33,4 +30,5 @@ public class ReservationVO {
     public void setTableSits(int tableSits) {
         this.tableSits = tableSits;
     }
+
 }
