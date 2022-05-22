@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Restaurant</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <!--상대주소 연결 주의-->
+    <link href="/resources/static/css/styles.css" rel="stylesheet"/>
+    <link href="/resources/static/css/index.css" rel="stylesheet"/>
+
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <!-- Navbar Brand-->
+    <a class="navbar-brand ps-3" onClick="location.href='index'">A's Kitchen</a>
+    <!-- Sidebar Toggle-->
+
+    <!-- Navbar Search-->
+    <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+            <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+        </div>
+    </form>
+    <!-- Navbar-->
+
+</nav>
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+            <div>
+                <!--카카오 지도-->
+                <div id="daumRoughmapContainer1651487669301" class="root_daum_roughmap root_daum_roughmap_landing"
+                     style="position: absolute; left: 50%; top: 50%; color: #fff; transform: translate(10%, -50%);"></div>
+
+                <!--가게 정보-->
+                <ul style="list-style:none; position: absolute; left: 50%; top: 50%; color: #fff; transform: translate(-135%, -50%);">
+                    <li style="font-size: 210%; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">운영요일 및 휴무일</li>
+                    <li style="font-size: 170%;  font-family: 'GmarketSansMedium', sans-serif;">월 ~ 일</li>
+                    <li style="font-size: 210%; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">운영시간</li>
+                    <li style="font-size: 170%;  font-family: 'GmarketSansMedium', sans-serif;">오전 11시 ~ 오후 10시</li>
+                    <li style="font-size: 210%; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">예약 가능 시간</li>
+                    <li style="font-size: 170%; font-family: 'GmarketSansMedium', sans-serif;">오전 11시 ~ 오후 8시</li>
+                    <li style="font-size: 210%; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">전화번호</li>
+                    <li style="font-size: 170%; font-family: 'GmarketSansMedium', sans-serif;">031-1234-5678</li>
+                    <li style="font-size: 210%; font-weight: bold; font-family: 'GmarketSansMedium', sans-serif;">위치</li>
+                    <li style="font-size: 170%; font-family: 'GmarketSansMedium', sans-serif;">경기 수원시 영통구 광교산로 154-42</li>
+                </ul>
+            </div>
+            <div>
+                <button style="position: absolute; left: 40%; top: 85%; transform: translate(-50%, -50%); width:100px; height:40px;
+    padding: 0;border: none; background: none; color:#fff; font-size: 30px; font-family: 'GmarketSansMedium', sans-serif;">
+                    <a onClick="location.href='login'" style="text-decoration-line: none; color: inherit;">LogIn</a></button>
+                <button style="position: absolute; left: 60%; top: 85%; transform: translate(-50%, -50%); width:100px;height:40px;
+    padding: 0;border: none; background: none; color:#fff; font-size: 30px; font-family: 'GmarketSansMedium', sans-serif;">
+                    <a onClick="location.href='post-reviewBoard'" style="text-decoration-line: none; color: inherit;">Review</a></button>
+            </div>
+        </main>
+
+    </div>
+</div>
+
+<script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+<script charset="UTF-8" >
+    new daum.roughmap.Lander({
+        "timestamp" : "1651487669301",
+        "key" : "2a3pt",
+        "mapWidth" : "400",
+        "mapHeight" : `300`
+    }).render();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<!--상대주소 연결 주의-->
+<script src="/resources/static/js/scripts.js"></script>
+</body>
+</html>
